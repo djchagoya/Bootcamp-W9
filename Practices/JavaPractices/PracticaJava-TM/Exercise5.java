@@ -6,17 +6,28 @@ import java.util.Scanner;
 public class Exercise5 {
 
     public static void isPrime(int n, int m, int d) {
+
         int a = 0;
+
+        int nAccountant = 0;
+        int accountant = 1;
         String dd = String.valueOf(d);
-        String mm = String.valueOf(m);
-        String numberCast = String.valueOf(n);
-        for (int j = 0; j < numberCast.length(); j++) {
-            if(numberCast.charAt(j) == dd.charAt(0))
-            {a++;}
-        }
-        if (a == m) {
-            System.out.println(n);
-        }
+
+
+        do {
+
+            String numberCast = String.valueOf(accountant);
+            for (int j = 0; j < numberCast.length(); j++) {
+                if(numberCast.charAt(j) == dd.charAt(0))
+                {a++;}
+            }
+            if (a == m) {
+                System.out.println(accountant);
+                nAccountant++;
+            }
+            a = 0;
+            accountant++;
+        } while (!(n == nAccountant));
 
     }
 
@@ -36,9 +47,8 @@ public class Exercise5 {
                 System.out.println("Enter d");
                 dInput = scanner.nextInt();
 
-                for (int i = 1; i < number; i++) {
-                    isPrime(i, mInput, dInput);
-                }
+                isPrime(number, mInput, dInput);
+
             } catch (InputMismatchException ex) {
                 System.out.println("Not a number");
                 follow = true;
