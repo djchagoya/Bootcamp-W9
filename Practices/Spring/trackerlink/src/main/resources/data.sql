@@ -1,0 +1,2 @@
+INSERT INTO Link (id,name,url,password,valid,visit) VALUES (1,'facebook','https://www.facebook.com','zxcvbnm','true',3);
+INSERT INTO Link (id,name,url,password,valid,visit) VALUES (2,'google','https://www.google.com','asdfghjkl','true',4);
